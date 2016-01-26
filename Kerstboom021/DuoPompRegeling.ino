@@ -39,7 +39,6 @@ void DuoPompRegeling() {
 		case 5:	// zet de Pig uit
 			digitalWrite(Pig,LOW);	// zet de PompInGebruik uit
 			looptijdLL = 0;			// zet de looptijd laagwater weer op 0
-			
 			PompStatus = 6;
 			break;
 		case 6:	// zet de volgende pomp in gebruik
@@ -48,12 +47,12 @@ void DuoPompRegeling() {
 				PompStatus = 7;
 			}
 			else {
-				// TODO stuur SMS 2 dat pomp 2 ook uitgezet is
+				StuurBericht("11");	// stuur SMS dat pomp2 uitgezet is.
 				PompStatus = 8;
 			}
 			break;
 		case 7:	// stuur SMS dat Pomp1 uitgezet is
-			// TODO stuur SMS 1 dat pomp1 uitgezet is
+			StuurBericht("10");	// stuur SMS dat pomp1 uitgezet is
 			PompStatus = 2;
 			break;
 		case 8:	// zet het systeem uit

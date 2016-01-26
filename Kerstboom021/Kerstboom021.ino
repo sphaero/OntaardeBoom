@@ -162,8 +162,8 @@ void setup() {
   
   Serial1.begin(19200); // connection to GPRS network
   Serial.begin(9600);  // output via serial monitor
-  Serial3.begin(19200); // Default connection rate for Daans BT module
-  //Serial3.begin(9600);		// snelheid BT voor BDR. Kan opgevoerd worden.
+  // Serial3.begin(19200); // Default connection rate for Daans BT module
+  Serial3.begin(9600);		// snelheid BT voor BDR. Kan opgevoerd worden.
   dht.begin();
   
   // initialiseer de Running Average
