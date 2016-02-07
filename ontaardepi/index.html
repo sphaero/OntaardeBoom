@@ -15,11 +15,19 @@ function kickstart()
 
 function get_serial_data() {
 	jQuery.get("screenlog.0", function(data, status){
-        alert("Data: " + data + "\nStatus: " + status);
-        jQuery('#serial').clear();
-        jQuery('#serial').html(data);
+        jQuery('#serial').empty();
+        jQuery('#serial').html("<pre>"+data+"</pre>");
     });
 }
+
+function reset() {
+    alert('not implemented');
+}
+
+function rebuild() {
+    alert('not implemented');
+}
+
 </script>
 
 </head>
@@ -28,11 +36,11 @@ function get_serial_data() {
 </body>
 <div id="main_container" class="container">
 <div class="row">
-	<button type="button" class="btn btn-primary">Reset</button>
-	<button type="button" class="btn btn-primary">Rebuild</button>
+	<button type="button" onclick="reset()" class="btn btn-primary">Reset</button>
+	<button type="button" onclick="rebuild()" class="btn btn-primary">Rebuild</button>
 </div>
 <div class="row">
-<div id="serial" style="border: solid 1px #2A2A2A;" class="col-xs-12 col-sm-12 col-md-6 col-lg-6"></div>
+<div id="serial" class="col-xs-12 col-sm-12 col-md-6 col-lg-6"></div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
