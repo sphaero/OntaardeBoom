@@ -2,8 +2,8 @@
 name=`basename $0`
 dirname=
 pid_file="/var/run/$name.pid"
-stdout_log="/var/log/$name.log"
-stderr_log="/var/log/$name.err"
+stdout_log="$HOME/$name.log"
+stderr_log="$HOME/$name.err"
 cmd1="screen -S opi -L -d -m /dev/ttyACM0 9600"
 
 build_firmware() {
@@ -27,14 +27,15 @@ case "$1" in
         echo "Already started"
     else
         echo "Starting $name"
-        cd "$dir"
-        if [ -z "$user" ]; then
-            sudo $cmd >> "$stdout_log" 2>> "$stderr_log" &
-        else
-            sudo -u "$user" $cmd >> "$stdout_log" 2>> "$stderr_log" &
-        fi
-        echo $! > "$pid_file"
-        if ! is_running; then
+        #cd "$dir"
+        #if [ -z "$user" ]; then
+        #    sudo $cmd >> "$stdout_log" 2>> "$stderr_log" &
+        #else
+        #    sudo -u "$user" $cmd >> "$stdout_log" 2>> "$stderr_log" &
+        #fi
+        #echo $! > "$pid_file"
+        $cmd1 >> "$stdout_log" 2>> "$stderr_log"
+	if ! is_running; then
             echo "Unable to start, see $stdout_log and $stderr_log"
             exit 1
         fi
