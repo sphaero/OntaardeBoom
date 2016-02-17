@@ -8,7 +8,8 @@ cmd1="screen -S opi -L -d -m /dev/ttyACM0 9600"
 
 build_firmware() {
     git pull
-    ./build.sh ../Kerstboom022 >> "$stdout_log" 2>> "$stderr_log"
+    ./build.sh ../Kerstboom022 
+#>> "$stdout_log" 2>> "$stderr_log"
 }
 
 get_pid() {
@@ -66,17 +67,18 @@ case "$1" in
     ;;
     status)
     if is_running; then
-        $0 stop
+        echo "Running"
+    else
+	echo "Stopped"
     fi
-    build_firmware
-    $0 start
     ;;
     rebuild)
     if is_running; then
-        echo "Running"
 	$0 stop
     fi
     build_firmware
+    rm screenlog.0
+    $0 start
     ;;
     attach)
     if is_running; then
@@ -89,7 +91,7 @@ case "$1" in
     fi
     ;;
     *)
-    echo "Usage: $0 {start|stop|restart|status|attach}"
+    echo "Usage: $0 {start|stop|restart|status|rebuild|attach}"
     exit 1
     ;;
 esac

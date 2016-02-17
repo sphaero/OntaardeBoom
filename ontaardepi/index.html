@@ -8,9 +8,12 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	
 <script>
+
+var ivid;
+
 function kickstart()
 {
-	setInterval(get_serial_data, 2000);
+	ivid = setInterval(get_serial_data, 2000);
 }
 
 function get_serial_data() {
@@ -20,12 +23,27 @@ function get_serial_data() {
     });
 }
 
+function view_serial() 
+{
+	clearInterval(ivid);
+	ivid = setInterval(get_serial_data, 2000);
+}
 function reset() {
-    alert('not implemented');
+    jQuery.get("boom/reset", function(data, status){
+        alert(data);
+    });
+    //alert('not implemented');
 }
 
 function rebuild() {
-    alert('not implemented');
+    //stop interval
+    clearInterval(ivid);
+    jQuery.get("boom/rebuild", function(data, status){
+        //alert(data);
+        jQuery('#serial').empty();
+        jQuery('#serial').html("<pre>"+data+"</pre>");
+    });
+    //alert('not implemented');
 }
 
 </script>
@@ -36,6 +54,7 @@ function rebuild() {
 </body>
 <div id="main_container" class="container">
 <div class="row">
+	<button type="button" onclick="view_serial()" class="btn btn-primary">View serial</button>
 	<button type="button" onclick="reset()" class="btn btn-primary">Reset</button>
 	<button type="button" onclick="rebuild()" class="btn btn-primary">Rebuild</button>
 </div>
