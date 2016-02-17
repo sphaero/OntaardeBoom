@@ -7,8 +7,8 @@ stderr_log="$HOME/$name.err"
 cmd1="screen -S opi -L -d -m /dev/ttyACM0 9600"
 
 build_firmware() {
-    echo TODO
-    #iets met arduino-build
+    git pull
+    ./build.sh ../Kerstboom022 >> "$stdout_log" 2>> "$stderr_log"
 }
 
 get_pid() {
@@ -66,18 +66,24 @@ case "$1" in
     ;;
     status)
     if is_running; then
-        echo "Running"
-    else
-        echo "Stopped"
-        exit 1
+        $0 stop
     fi
+    build_firmware
+    $0 start
+    ;;
+    rebuild)
+    if is_running; then
+        echo "Running"
+	$0 stop
+    fi
+    build_firmware
     ;;
     attach)
     if is_running; then
         echo "Use \"CTRL-A d\" to detach"
         echo "Press return to continue..."
         read p
-        screen -r S opi
+        screen -r -S opi
     else
         echo "Not running"
     fi
