@@ -1,5 +1,4 @@
 
-
 /* Kerstboom02.2	
 ** gelijk aan GPRS_MEGA10.0
 ** maar nu met twee pompen en de kraan wordt afzonderlijk bedient via een vlotterschakelaar en een accu
@@ -149,6 +148,7 @@ int Druppelspeling = 5;		// toegestane verschil rond het gemiddelde
 // Global variable for SMS yes or no
 char SMScode = '0';  //stuur sms bij alarmsituaties, default uit
 String telefoonnummer = "";
+boolean bericht_gestuurd = false;	// om te voorkomen dat SMS testbericht meer dan één keer per minuut gestuurd wordt
 const int Simpower = 7;  // voor de sim900 kaart Shield B-v1.1
 // const int Simpower = 9;  // voor de "oude" Sim900 kaart
 
@@ -259,8 +259,12 @@ void TestSignaal() {    // Stuurt een teken van leven naar SMS
   // stuur iedere dag om 12:00 uur een Testbericht
 	
   if (now.hour() == 12 && now.minute() == 00) {
-    StuurBericht("12");
+	if (!bericht_gestuurd) {
+	    StuurBericht("12");
+		bericht_gestuurd = true;
+	}
   }
+  else bericht_gestuurd = false;
 
 }  // einde TestSignaal
 
