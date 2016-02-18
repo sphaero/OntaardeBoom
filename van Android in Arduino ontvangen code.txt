@@ -1,0 +1,34 @@
+/* specificatie van van Android ontvangen kode
+	nu aangemaakt in Visual Studio2015
+
+	a = zet SMS code aan. Return 10 met SMScode
+	b = set SMS code uit. Return 10 met SMScode
+	c = test return connectie. Geen Androidinfo. 
+	d = geef de raindrop sensor waarde door. Return: 17,18 of 19 + de sensor waarde.
+	e = geef de gemiddelde raindrop sensor waarde door. Return: 20, 21 en 22 + de sensor waarde.
+	f = geef de files op de SD card door aan Android. Return 11 met de files.
+	g = geef de inhoud van de file door aan Android. Return 12 met de inhoud.
+	h = geef Humidity en temperatuur door. Return 04 met Humidity en 05 met Temperatuur.
+	l = geef LUX door. Return 09 met LUX waarde
+	k = lees de Arduino settings uit. Meerdere settings in de info. Return
+	m = stuur de tijd op. Return 8 met tijd.
+	n = geef de raindrop droog code door. Return: 23,24 of 25 + de droog code.
+	o = stuur de datum op. Return 3 met datum.
+	q = delete de file 'bestand' van SD card. Return 13 met bestandsnaam.
+	r = geef status VlotterLaag door. Return 2L of 2H
+	s = lees SDA Array uit over SD card actie. Return 06 en 07 met Schijfino en bestandsnaam
+	t = lees telefoonnummer uit. Return 14 met telefoonnummer
+	u = stuur PompStatus. Return: "15" met PompStatus
+	v = stuur Pompnummer. Return: "16" met Pompnummer.
+	x = beschikbaar
+	y = opnieuw zenden bepaalde gegevens bij oa opstart Android app
+	z = reset Arduino.
+
+		Return 26: Arduino send alle vaste gegevens
+	    Return 29: Arduino stuurt de status van de vlotter delay door
+		Return 30: Arduino stuurt de status van de sensor delay door
+	
+	
+	
+	
+*/

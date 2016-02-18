@@ -1,0 +1,33 @@
+ /*
+		 * verwerkt de input uit de Arduino De ingelezen informatie bestaat uit
+		 * een code van twee posities met daarna direct de informatie de codes:
+		 * 01:
+		 * 02 Arduino send vlotterstand
+		 * 03 Arduino send datum
+		 * 04 Arduino send waarde humidity
+		 * 05 Arduino send waarde Temperatuur in C
+		 * 06 Arduino send bericht toestand schijf
+		 * 07 Arduino send bericht toestand file
+		 * 08 Arduino send tijd
+		 * 09 Arduino send waarde Lux
+		 * 10 Arduino send waarde SMScode
+		 * 11 Arduino send files
+		 * 12 Arduino send inhoud files
+		 * 13 Arduino send deleted filename
+		 * 14 Arduino send telefoonnummer
+		 * 15 Arduino send PompStatus
+		 * 16 Arduino send pompnummer
+		 * 17 Arduino send waarde sensor1
+		 * 18 Arduino send waarde sensor2
+		 * 19 Arduino send waarde sensor3
+		 * 20 Arduino send gemiddelde waarde sensor1
+		 * 21 Arduino send gemiddelde waarde sensor2
+		 * 22 Arduino send gemiddelde waarde sensor3
+		 * 23 Arduino send Drooginfo sensor1
+		 * 24 Arduino send Drooginfo sensor2
+		 * 25 Arduino send Drooginfo sensor3
+		 * 26 Arduino send vaste gegevens
+		 * 27 Arduino send SMS status
+		 * 28 Arduino send SMS bericht
+		 * 29 Arduino send status vlotterdelay
+		 * 30 Arduino send status sensordelay
