@@ -1,0 +1,29 @@
+<resources>
+
+    <!--
+        Base application theme for API 14+. This theme completely replaces
+        AppBaseTheme from BOTH res/values/styles.xml and
+        res/values-v11/styles.xml on API 14+ devices.
+    -->
+    <style name="AppBaseTheme"
+        parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- API 14 theme customizations can go here. -->
+    </style>
+
+    <style name="simple_xy">
+        <item name="graphMarginTop">20dp</item>
+        <item name="graphMarginBottom">25dp</item>
+        <item name="graphMarginLeft">25dp</item>
+        <item name="graphMarginRight">20dp</item>
+        <item name="labelTextSize">13sp</item>
+        <item name="labelTextColor">#FFFFFF</item>
+        <item name="rangeLabelTextSize">13sp</item>
+        <item name="domainLabelTextSize">13sp</item>
+        <item name="legendTextSize">15sp</item>
+        <item name="legendIconHeight">15sp</item>
+        <item name="legendIconWidth">15sp</item>
+        <item name="legendHeight">25sp</item>
+        <item name="legendAnchorPosition">right_bottom</item>
+    </style>
+
+</resources>

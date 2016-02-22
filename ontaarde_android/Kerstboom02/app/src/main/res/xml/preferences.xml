@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen 
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="SMS sturen">
+
+        <CheckBoxPreference
+            android:title="SMS"
+            android:defaultValue="false"
+            android:summary="Wilt u een SMS bij alarm sturen"
+            android:key="checkboxPref" />
+
+        <EditTextPreference
+            android:name="EditTelephone"
+            android:title="Telephone number for SMS"
+            android:key="editTelPref"
+            android:summary="vul een geldig telefoonnummer in"
+            android:defaultValue="[Enter a telephone number here]"/>
+
+    </PreferenceCategory>
+        
+    <PreferenceCategory
+        android:title="Category 2">
+
+        <EditTextPreference
+            android:name="EditText"
+            android:summary="Enter a string (nog niet gebruikt"
+            android:defaultValue="[Enter a string here]"
+            android:title="Edit Text "
+            android:key="editTextPref" />
+
+        <PreferenceScreen
+            android:title="Arduino instellingen"
+            android:summary= "Click hier voor de Arduino instellingen"
+            android:key="secondPrefScreenPref">
+
+            <PreferenceCategory
+                android:title="Druppelsensoren">
+
+                <EditTextPreference
+                    android:name="drooglevel1"
+                    android:summary="waarde van 0 - 100 dat door de sensor als 'nat' wordt ervaren."
+                    android:title="drooglevel sensor 1"
+                    android:numeric="integer"
+                    android:key="drooglevel1Pref" />
+                <EditTextPreference
+                    android:name="drooglevel2"
+                    android:summary="waarde van 0 - 100 dat door de sensor als 'nat' wordt ervaren."
+                    android:title="drooglevel sensor 2"
+                    android:numeric="integer"
+                    android:key="drooglevel2Pref" />
+                <EditTextPreference
+                    android:name="drooglevel3"
+                    android:summary="waarde van 0 - 100 dat door de sensor als 'nat' wordt ervaren."
+                    android:title="drooglevel sensor 3"
+                    android:numeric="integer"
+                    android:key="drooglevel3Pref" />
+
+                <EditTextPreference
+                    android:name="droogtijd"
+                    android:summary="tijd de de sensoren nodig hebben om nat te worden (in miliseconden)"
+                    android:title="nat tijd"
+                    android:numeric="integer"
+                    android:key="droogtijdPref" />
+
+                <EditTextPreference
+                    android:name="druppelspeling"
+                    android:summary="max toegestane verschil tussen sensoruitlezingen"
+                    android:title="sensorspeling"
+                    android:numeric="integer"
+                    android:key="spelingPref" />
+
+                <EditTextPreference
+                    android:name="samples"
+                    android:summary="aantal samples voor gemiddelde sensowaarde. Restart Arduino vereist."
+                    android:title="sensorgemiddelde"
+                    android:numeric="integer"
+                    android:key="gemPref" />
+
+            </PreferenceCategory>
+
+            <PreferenceCategory
+                android:title="Vlotter">
+
+                    <EditTextPreference
+                        android:name="vlotterdelay"
+                        android:summary="dendertijd van de vlotterschakelaar. (in miliseconden)"
+                        android:title="dender vlotter"
+                        android:numeric="integer"
+                        android:key="vlotterPref" />
+
+            </PreferenceCategory>
+
+         </PreferenceScreen>
+
+    </PreferenceCategory>  
+          
+</PreferenceScreen>

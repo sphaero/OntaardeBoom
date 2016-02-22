@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kerstboom02</string>
+    <string name="action_settings">Settings</string>
+    <string name="about_text">\
+ 	    This App controls The Uprooted Tree version 2.0 with
+        2 pumps and 3 sensors.
+        It only works with a dedicated Arduino Program, written by the auteur.
+
+        See: http://www.uprootedtree.com for further information.</string>
+
+    <string name="about">About</string>
+</resources>
