@@ -1,0 +1,15 @@
+[Unit]
+Description=Ontaardeboom service
+
+[Service]
+Type=oneshot
+User=pi
+Group=pi
+ExecStart=/home/pi/ontaardeboom/ontaardepi/opi.sh start
+ExecStop=/home/pi/ontaardeboom/ontaardepi/opi.sh stop
+RemainAfterExit=yes
+WorkingDirectory=/home/pi/ontaardeboom/ontaardepi
+IgnoreSIGPIPE=false
+
+[Install]
+WantedBy=multi-user.target

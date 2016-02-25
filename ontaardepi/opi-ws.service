@@ -1,0 +1,15 @@
+[Unit]
+Description=Ontaardeboom webserver service
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+ExecStart=/usr/bin/python3 ws.py
+ExecStop=/usr/bin/pkill -f "python3 ws.py"
+#RemainAfterExit=yes
+WorkingDirectory=/home/pi/ontaardeboom/ontaardepi
+#IgnoreSIGPIPE=false
+
+[Install]
+WantedBy=multi-user.target
