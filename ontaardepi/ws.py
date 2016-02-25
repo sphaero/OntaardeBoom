@@ -179,7 +179,7 @@ class AppieBoom(AppieRestObject):
             #call("./opi.sh", "rebuild")
         elif path == "reset":
             # do reset
-            ret = os.system("./opi.sh rebuild")
+            ret = os.system("./opi.sh restart")
             if ret == 0:
                 return exc.HTTPOk("command succeeded")
             else:
